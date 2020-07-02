@@ -1,0 +1,266 @@
+<!-- 
+ * Beispiel XML Schema Definitionen mit einfachen Typen
+ *
+ * Bedeutung der Processing Instructions:
+ * - xmlns:xs
+ *   Verwendung vom Namesraum Praefix xs fuer die Schema Elemente. 
+ *
+ *   Alternativ kann auch mit xmlns="http://www.w3.org/2001/XMLSchema" 
+ *   der Default Namesraum auf die Schema Elemente gesetzt werden, so 
+ *   dass die Angabe des Praefix weggelassen werden kann. In diesem 
+ *   Fall muesste man aber ein Praefix fuer die eigenen Typen definieren.
+ *
+ * - elementFormDefault
+ *   Definiert ob die Elemente jeweils mit (qualified) oder ohne (unqualified) 
+ *   Praefix angegeben werden muessen. Nicht betroffen von dieser Einstellung  
+ *   sind die Elemente des Default Namespace.
+ *
+ * - attributeFormDefault
+ *   Definiert ob die Attribute jeweils mit (qualified) oder ohne (unqualified) 
+ *   Praefix angegeben werden muessen. Nicht betroffen von dieser Einstellung  
+ *   sind die Elemente des Default Namespace. 
+ -->
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="unqualified" 
+	attributeFormDefault="unqualified">
+
+	<!--   
+	 * Hauptelement
+	 -->
+	<xs:element name="basic">
+
+		<!--  
+	 	 * Kommentar (optional), kann mit dem Element annotation zu jedem
+		 * beliebigen Element hinzugefuegt werden. 
+		 -->
+		<xs:annotation>
+			<xs:documentation>
+				Beispiel mit XML Schema Definitionen 
+			</xs:documentation>
+		</xs:annotation>
+
+		<!--
+		 * Komplexes Element mit definierter Reihenfolge (sequence)
+		 -->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="thema" />
+				<xs:element ref="autor" />
+				<xs:element ref="version" />
+
+				<xs:element ref="datum" />
+				<xs:element ref="zeit" />
+
+				<xs:element ref="gueltig" />
+				<xs:element ref="nummer" />
+				<xs:element ref="betrag" />
+				
+				<xs:element ref="woche" />
+				<xs:element ref="wochentag" />
+				<xs:element ref="auftragsnummer" />
+
+				<xs:element ref="kurztext" />
+				<xs:element ref="fixtext" />
+				<xs:element ref="textbereich" />
+
+				<xs:element ref="person" />
+				
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<!-- ********************************************************************** -->
+	<!-- Elemente                                                               --> 
+	<!-- ********************************************************************** -->
+
+	<!--  
+	* einfacher String 
+	-->
+	<xs:element name="thema" type="xs:string" />
+
+	<!--  
+	* einfaches String mit Defaultwert 
+	-->
+	<xs:element name="autor" type="xs:string"  default="Iten" />
+
+	<!--  
+	* einfacher String mit fixem Wert 
+	-->
+	<xs:element name="version" type="xs:string"  fixed="1.0" />
+
+	<!--  
+	* Datum im Format YYYY-MM-TT  (Jahr, Monat, Tag)
+	-->
+	<xs:element name="datum" type="xs:date" />
+
+	<!--  
+	* Zeit im Format HH:MM:SS (Stunden, Minuten, Sekunden)  
+	-->
+	<xs:element name="zeit" type="xs:time" />
+
+	<!--  
+	* Wahrheitswert (boolescher Ausdruck), true oder false  
+	-->
+	<xs:element name="gueltig" type="xs:boolean" />
+	
+	<!--  
+	* Element mit Ganzahlwert  
+	-->
+	<xs:element name="nummer" type="xs:integer" />
+	
+	<!--  
+	* Element mit Dezimalwert  
+	-->
+	<xs:element name="betrag" type="xs:decimal" />
+	
+	<!--  
+	* Einschraenkung auf Wertebereich   
+	-->
+	<xs:element name="woche">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer"> 
+				<xs:minInclusive value="1" />
+				<xs:maxInclusive value="53" /> 
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<!--  
+	* Einschraenkung auf vorgegebene Werte   
+	-->
+	<xs:element name="wochentag">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Montag" />
+				<xs:enumeration value="Dienstag" />
+				<xs:enumeration value="Mittwoch" />
+				<xs:enumeration value="Donnerstag" />
+				<xs:enumeration value="Freitag" />
+				<xs:enumeration value="Samstag" />
+				<xs:enumeration value="Sonntag" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	
+	<!--  
+	* Einschraenkung auf regulaeren Ausdruck
+	* Auftragsnummer im Format : A-nnnn   
+	-->
+	<xs:element name="auftragsnummer">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[A][0-9]{4}"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<!--  
+	* Einschraenkung auf druckbare Zeichen. Ersetzt nicht druckbare Zeichen
+	* wie Tabulatoren, Leerzeichen, Zeilenumbrueche und Zeilenvorschuebe.
+	* - preserve
+	*   keine Veraenderung
+	* - replace
+	*   Zeichen werden durch Leerzeichen ersetzt
+	* - collapse
+	*   Zeichen werden durch Leerzeichen ersetzt, mehrfache Leerzeichen
+	*   werden durch ein Zeichen ersetzt.
+	-->
+	<xs:element name="kurztext">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:whiteSpace value="collapse" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<!--  
+	* Einschraenkung String auf fixe Laenge von 20 Zeichen
+	-->
+	<xs:element name="fixtext">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="20" />
+			</xs:restriction>	
+		</xs:simpleType>
+	</xs:element>
+	
+	<!--  
+	* Einschraenkung String auf Laengenbereich von 5..50 Zeichen
+	-->
+	<xs:element name="textbereich">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="5" />
+				<xs:maxLength value="50" />
+			</xs:restriction>	
+		</xs:simpleType>
+	</xs:element>
+	
+	<!--  
+	* Element mit erweitertem Typ personTyp  
+	-->
+	<xs:element name="person" type="personTyp" />
+
+	
+	<!-- ********************************************************************** -->
+	<!-- Datentyp personTyp                                                     --> 
+	<!-- ********************************************************************** -->
+
+	<!--  
+	* Typ Person mit den beiden Elementen vorname und nachname sowie den  
+	* Attributen id, anrede, geheim, nationalitaet und anwesend   
+	-->
+	<xs:complexType name="personTyp">
+
+		<xs:sequence>
+			<xs:element name="vorname"  type="xs:string" minOccurs="0" />
+			<xs:element name="nachname" type="xs:string" />
+		</xs:sequence>
+		
+		<!--  
+		* Attribut von Typ Integer  
+		-->
+		<xs:attribute name="id" type="xs:integer" use="required" />
+
+		<!--
+		* optionales Attribut mit eingeschraenkter Wertemenge
+		-->
+		<xs:attribute name="anrede" type="anredeTyp" use="optional" />
+		
+		<!--
+		* verbotenes Attribut, darf nicht gesetzt werden
+		-->
+		<xs:attribute name="geheim" type="xs:string" use="prohibited" />
+		
+		<!--
+		* Attribut mit Default Wert
+		-->
+		<xs:attribute name="nationalitaet" type="xs:string" default="CH" />
+		
+		<!--
+		* Attribut mit fixem Wert
+		-->
+		<xs:attribute name="anwesend" type="xs:boolean" fixed="true" />
+		
+	</xs:complexType>
+
+
+	<!-- ********************************************************************** -->
+	<!-- Datentyp anredeTyp                                                     --> 
+	<!-- ********************************************************************** -->
+
+	<!--
+	* Typ Anrede mit eingeschraenkten Werten
+	-->
+	<xs:simpleType name="anredeTyp">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Frau" />
+			<xs:enumeration value="Herr" />
+		</xs:restriction>
+	</xs:simpleType>
+
+
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<basic  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="basic.xsd">
+
+	<thema>XML Schema</thema>
+
+	<!-- 
+		weitere Elemente hier einfügen... 
+	-->
+
+
+
+
+	<!-- 
+		weitere Attribute für die Person hier hinzufügen... 
+	-->
+	<person id="1">
+		<vorname>Zoé</vorname>
+		<nachname>Iten</nachname>
+	</person>
+
+</basic>

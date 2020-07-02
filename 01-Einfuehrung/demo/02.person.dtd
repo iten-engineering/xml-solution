@@ -1,0 +1,5 @@
+<!ELEMENT person 	(vorname, nachname)>
+<!ATTLIST person anrede (Herr | Frau) #IMPLIED>
+<!ELEMENT vorname	(#PCDATA)> 
+<!ELEMENT nachname	(#PCDATA)> 
+

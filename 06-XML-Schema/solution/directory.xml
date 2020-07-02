@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="directory.xsd" >
+	
+	<person anrede="Frau">
+		<vorname>Erika</vorname>
+		<nachname>Wanner</nachname>
+	</person>
+	<person anrede="Frau">
+		<vorname>Daniela</vorname>
+		<nachname>Frischknecht</nachname>
+	</person>
+	<person anrede="Herr">
+		<vorname>Klaus</vorname>
+		<nachname>Leuenberger</nachname>
+	</person>
+
+</directory>

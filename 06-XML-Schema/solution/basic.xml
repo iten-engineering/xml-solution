@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<basic  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="basic.xsd">
+
+	<thema>XML Schema</thema>
+	<autor>Thomas Iten</autor>
+	<version>1.0</version>
+
+	<datum>2007-10-01</datum>
+	<zeit>11:37:52</zeit>
+	
+	<gueltig>true</gueltig>
+	<nummer>17</nummer>
+	<betrag>12.50</betrag>
+	
+	<woche>40</woche>
+	<wochentag>Freitag</wochentag>
+	<auftragsnummer>A0715</auftragsnummer>
+
+	<kurztext>wichtige Meldung</kurztext>
+	<fixtext>Text mit fixer Länge</fixtext>
+	<textbereich>Text mit Längenbereich zwischen 5..50 Zeichen</textbereich>
+	
+	<person id="1" anrede="Frau">
+		<vorname>Zoé</vorname>
+		<nachname>Iten</nachname>
+	</person>
+
+</basic>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="seminar">
+
+		<xs:annotation>
+			<xs:documentation>
+				Schema Definition für das Seminar Beispiel
+				mit tiefer Verschachtelung der Elementdefinitionen
+			</xs:documentation>
+		</xs:annotation>
+
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ziel" type="xs:string" />
+				<xs:element name="datum">
+					<xs:complexType>
+						<xs:attribute name="von" type="xs:date"
+							use="required" />
+						<xs:attribute name="bis" type="xs:date"
+							use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="zeitplan">
+					<xs:complexType>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element name="lektion">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="thema"
+											type="xs:string" maxOccurs="unbounded" />
+									</xs:sequence>
+									<xs:attributeGroup
+										ref="zeitAttrGroup" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="pause">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attributeGroup ref="zeitAttrGroup" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:choice>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="kursleiter">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="person" type="personTyp"
+								maxOccurs="2" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="teilnehmer">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="person" type="personTyp"
+								minOccurs="3" maxOccurs="unbounded" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="personTyp">
+		<xs:sequence>
+			<xs:element name="vorname" type="xs:string" minOccurs="0" />
+			<xs:element name="nachname" type="xs:string" />
+		</xs:sequence>
+		<xs:attribute name="anrede" type="anredeTyp" />
+	</xs:complexType>
+
+	<xs:simpleType name="anredeTyp">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Frau" />
+			<xs:enumeration value="Herr" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:attributeGroup name="zeitAttrGroup">
+		<xs:attribute name="von" type="xs:time" use="required" />
+		<xs:attribute name="bis" type="xs:time" use="required" />
+	</xs:attributeGroup>
+
+</xs:schema>

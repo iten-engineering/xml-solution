@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE person SYSTEM "02.person.dtd">  
+
+<person anrede="Herr">
+	<vorname>Markus</vorname>
+	<nachname>Schmid</nachname> 
+</person>

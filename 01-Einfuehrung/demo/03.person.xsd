@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="person">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vorname" type="xs:string" minOccurs="0" />
+				<xs:element name="nachname" type="xs:string" />
+			</xs:sequence>
+			<xs:attribute name="anrede" type="anredeTyp" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="anredeTyp">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Frau" />
+			<xs:enumeration value="Herr" />
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

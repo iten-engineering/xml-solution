@@ -1,0 +1,15 @@
+<!ELEMENT kunden 		(firma*)>
+<!ELEMENT firma 		(name, adresse, kommunikation)>
+<!ELEMENT adresse 		(strasse, plz, ort, land?)>
+<!ELEMENT kommunikation (telefon, fax?, email)>
+
+<!ELEMENT name 			(#PCDATA)>
+
+<!ELEMENT strasse 		(#PCDATA)>
+<!ELEMENT plz 			(#PCDATA)>
+<!ELEMENT ort 			(#PCDATA)>
+<!ELEMENT land 			(#PCDATA)>
+
+<!ELEMENT telefon 		(#PCDATA)>
+<!ELEMENT fax 			(#PCDATA)>
+<!ELEMENT email 		(#PCDATA)>

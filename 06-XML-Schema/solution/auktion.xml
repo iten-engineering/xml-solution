@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<auktion 
+	xmlns:h="http://www.aspect1.ch/haus" 
+	xmlns:t="http://www.aspect1.ch/technik" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="auktion.xsd">
+
+	<h:schloss>
+		<h:name>Schloss Schönbrunn</h:name>
+		<h:land>Östereich</h:land>
+		<h:epoche>Barock</h:epoche>
+	</h:schloss>
+	<t:schloss>
+		<t:typ>Doppelbartschloss</t:typ>
+		<t:erfinder>Theodor Kromer</t:erfinder>
+	</t:schloss>
+
+</auktion>

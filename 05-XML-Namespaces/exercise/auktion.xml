@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<auktion> 
+	<schloss>
+		<name>Schloss Schönbrunn</name>
+		<land>Östereich</land>
+		<epoche>Barock</epoche>
+	</schloss>
+	<schloss>
+		<typ>Doppelbartschloss</typ>
+		<erfinder>Theodor Kromer</erfinder>
+	</schloss>
+</auktion>

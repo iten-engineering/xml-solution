@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE drinks SYSTEM "drinks.dtd">
+<drinks>
+	<drink>
+		<name>Rivella</name>
+		<preis>4.50</preis>
+	</drink>
+	<drink>
+		<name>Sinalco</name>
+		<preis>4.20</preis>
+	</drink>
+	<drink>
+		<name>Gin Tonic</name>
+		<preis>12.00</preis>
+	</drink>
+</drinks>

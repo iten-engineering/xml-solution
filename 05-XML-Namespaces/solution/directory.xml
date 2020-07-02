@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="directory.xsl"?>
+<directory>
+  <person>
+    <vorname>Erika</vorname>
+    <nachname>Wanner</nachname>
+  </person>
+  <person>
+    <vorname>Daniela</vorname>
+    <nachname>Frischknecht</nachname>
+  </person>
+  <person>
+    <vorname>Klaus</vorname>
+    <nachname>Leuenberger</nachname>
+  </person>
+</directory>
+

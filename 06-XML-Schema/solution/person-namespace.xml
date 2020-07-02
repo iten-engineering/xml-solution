@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://www.aspect1.ch/myNamespace" 
+	xsi:schemaLocation="http://www.aspect1.ch/myNamespace person-namespace.xsd">
+
+	<vorname>Peter</vorname>
+	<nachname>Müller</nachname>
+</person>

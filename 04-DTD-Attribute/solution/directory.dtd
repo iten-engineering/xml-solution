@@ -1,0 +1,8 @@
+<!ENTITY % anrede "anrede (Herr | Frau) #IMPLIED">
+
+<!ELEMENT directory (person)+>
+<!ELEMENT person    (vorname, nachname)>
+<!ATTLIST person    %anrede; >
+
+<!ELEMENT vorname   (#PCDATA)> 
+<!ELEMENT nachname  (#PCDATA)> 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml-stylesheet type="text/css" href="html-namespace.css"?>
+
+<dokument>
+  <html xmlns:html="http://www.w3.org/TR/REC-html40">
+    <html:head>
+       <html:title>HTML-Namensraum</html:title>
+    </html:head>
+    <html:body>
+       <html:h1>HTML in XML</html:h1>
+       <html:p>Die Intgration von HTML-Elementen in XML wird durch die Definition eines Namensraums möglich.</html:p>
+    </html:body>
+  </html> 
+</dokument>

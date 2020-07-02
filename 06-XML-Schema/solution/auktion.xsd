@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns:h="http://www.aspect1.ch/haus" 
+	xmlns:t="http://www.aspect1.ch/technik" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:import namespace="http://www.aspect1.ch/technik" schemaLocation="auktion-technik.xsd"/>
+	<xs:import namespace="http://www.aspect1.ch/haus" schemaLocation="auktion-haus.xsd"/>
+
+	<xs:element name="auktion">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="h:schloss"/>
+				<xs:element ref="t:schloss"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

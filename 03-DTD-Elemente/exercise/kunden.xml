@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kunden>
+	<firma>
+		<name>Aare Buchversand GmbH</name>
+		<adresse>
+			<strasse>Eigerweg 9</strasse>
+			<plz>3006</plz>
+			<ort>Bern</ort>
+		</adresse>
+		<kommunikation>
+			<telefon>++41 (0)31 399 25 87</telefon>
+			<fax>++41 (0)31 399 25 88</fax>
+			<email>info@abv.ch</email>
+		</kommunikation>
+	</firma>
+	<firma>
+		<name>Bücher Scherz AG</name>
+		<adresse>
+			<strasse>Fröhlichstrasse 7</strasse>
+			<plz>8000</plz>
+			<ort>Zürich</ort>
+			<land>Schweiz</land>
+		</adresse>
+		<kommunikation>
+			<telefon>++41 (0)44 123 45 67</telefon>
+			<email>office@scherz.ch</email>
+		</kommunikation>
+	</firma>
+</kunden>

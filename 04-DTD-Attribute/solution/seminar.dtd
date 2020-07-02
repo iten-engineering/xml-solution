@@ -1,0 +1,21 @@
+<!ENTITY % von "von CDATA #REQUIRED">
+<!ENTITY % bis "bis CDATA #REQUIRED">
+<!ENTITY % anrede "anrede (Herr | Frau) #IMPLIED">
+
+<!ELEMENT seminar 		(ziel, datum, zeitplan, kursleiter, teilnehmer)>
+<!ELEMENT zeitplan 		(lektion | pause)+>
+<!ELEMENT lektion 		(thema)+>
+<!ATTLIST lektion 		%von; %bis;>
+<!ELEMENT kursleiter	(person)+> <!-- es kann auch mehrer Kursleiter geben -->
+<!ELEMENT teilnehmer	(person)+>
+<!ELEMENT person		(vorname, nachname)>
+<!ATTLIST person 		%anrede; >
+
+<!ELEMENT ziel			(#PCDATA)> 
+<!ELEMENT datum			EMPTY> 
+<!ATTLIST datum 		%von; %bis;>
+<!ELEMENT pause			(#PCDATA)> 
+<!ATTLIST pause 		%von; %bis;>
+<!ELEMENT thema			(#PCDATA)> 
+<!ELEMENT vorname		(#PCDATA)> 
+<!ELEMENT nachname		(#PCDATA)> 

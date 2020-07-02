@@ -1,0 +1,5 @@
+<!ELEMENT drinks 	(drink*)>
+<!ELEMENT drink 	(name, preis)>
+<!ELEMENT name		(#PCDATA)> 
+<!ELEMENT preis		(#PCDATA)> 
+

@@ -1,0 +1,141 @@
+<!-- 
+ * Beispiel XML Schema Definitionen mit einfachen Typen
+ *
+ * Bedeutung der Processing Instructions:
+ * - xmlns:xs
+ *   Verwendung vom Namesraum Praefix xs fuer die Schema Elemente. 
+ *
+ *   Alternativ kann auch mit xmlns="http://www.w3.org/2001/XMLSchema" 
+ *   der Default Namesraum auf die Schema Elemente gesetzt werden, so 
+ *   dass die Angabe des Praefix weggelassen werden kann. In diesem 
+ *   Fall muesste man aber ein Praefix fuer die eigenen Typen definieren.
+ *
+ * - elementFormDefault
+ *   Definiert ob die Elemente jeweils mit (qualified) oder ohne (unqualified) 
+ *   Praefix angegeben werden muessen. Nicht betroffen von dieser Einstellung  
+ *   sind die Elemente des Default Namespace.
+ *
+ * - attributeFormDefault
+ *   Definiert ob die Attribute jeweils mit (qualified) oder ohne (unqualified) 
+ *   Praefix angegeben werden muessen. Nicht betroffen von dieser Einstellung  
+ *   sind die Elemente des Default Namespace. 
+ -->
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="unqualified" 
+	attributeFormDefault="unqualified">
+
+	<!--   
+	 * Hauptelement
+	 -->
+	<xs:element name="basic">
+
+		<!--  
+	 	 * Kommentar (optional), kann mit dem Element annotation zu jedem
+		 * beliebigen Element hinzugefuegt werden. 
+		 -->
+		<xs:annotation>
+			<xs:documentation>
+				Beispiel mit XML Schema Definitionen 
+			</xs:documentation>
+		</xs:annotation>
+
+		<!--
+		 * Komplexes Element mit definierter Reihenfolge (sequence)
+		 -->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="thema" />
+				
+				<!-- 
+				 * Fügen Sie Element für Element hinzu und erstellen Sie parallel
+				 * dazu die Definiton weiter unten. Validieren Sie die neuen 
+				 * Einträge jeweis zusammen mit den XML Daten 
+				-->
+				
+				<!--
+				<xs:element ref="autor" />
+				<xs:element ref="version" />
+
+				<xs:element ref="datum" />
+				<xs:element ref="zeit" />
+
+				<xs:element ref="gueltig" />
+				<xs:element ref="nummer" />
+				<xs:element ref="betrag" />
+				
+				<xs:element ref="woche" />
+				<xs:element ref="wochentag" />
+				<xs:element ref="auftragsnummer" />
+
+				<xs:element ref="kurztext" />
+				<xs:element ref="fixtext" />
+				<xs:element ref="textbereich" />
+				-->
+				
+				<xs:element ref="person" />
+				
+				 
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+
+	<!-- ********************************************************************** -->
+	<!-- Elemente                                                               --> 
+	<!-- ********************************************************************** -->
+
+	<!--  
+	* einfacher String 
+	-->
+	<xs:element name="thema" type="xs:string" />
+
+	<!-- 
+		weitere Element Definitionen hier einfügen... 
+	-->
+
+
+	<!--  
+	* Element mit erweitertem Typ personTyp  
+	-->
+	<xs:element name="person" type="personTyp" />
+
+
+	<!-- ********************************************************************** -->
+	<!-- Datentyp personTyp                                                     --> 
+	<!-- ********************************************************************** -->
+
+	<!--  
+	* Typ Person mit den beiden Elementen vorname und nachname sowie den  
+	* Attributen id, anrede, geheim, nationalitaet und anwesend   
+	-->
+	<xs:complexType name="personTyp">
+
+		<xs:sequence>
+			<xs:element name="vorname"  type="xs:string" minOccurs="0" />
+			<xs:element name="nachname" type="xs:string" />
+		</xs:sequence>
+		
+		<!--  
+		* Attribut von Typ Integer  
+		-->
+		<xs:attribute name="id" type="xs:integer" use="required" />
+
+
+		<!-- 
+			weitere Attribut Definitioen hier einfügen... 
+		-->
+		
+	</xs:complexType>
+
+
+	<!-- ********************************************************************** -->
+	<!-- Datentyp anredeTyp                                                     --> 
+	<!-- ********************************************************************** -->
+
+	<!--
+	* Typ Anrede mit eingeschraenkten Werten
+	-->
+
+
+</xs:schema>
